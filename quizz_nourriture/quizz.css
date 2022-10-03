@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+
+body {
+    font-family: 'Abyssinica SIL', serif;
+    background-color: rgb(251, 214, 145);
+}
+
+.return_menu {
+    text-decoration: none;
+}
+
+.img_fleche {
+    width: auto;
+    height: 50px;
+}
+
+    .img_fleche:hover {
+        width: auto;
+        height: 58px;
+    }
+
+.main_content {
+    text-align: center;
+}
+
+.title {
+    font-size: 37px;
+    margin-top: 5%;
+}
+
+.sous_title {
+    font-size: 29px;
+    text-decoration: underline;
+}
+
+.start {
+    margin-top: 2.5%;
+    padding: 0.7%;
+    font-size: 19px;
+    background-color: orange;
+    border-radius: 5%;
+}
+
+    .start:hover {
+        background-color: rgb(234, 156, 13);
+    }
