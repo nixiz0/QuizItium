@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+
+body {
+    font-family: 'Abyssinica SIL', serif;
+    background-color: rgb(217, 217, 217);
+}
+
+.titre_menu {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 7%;
+}
+
+.sous_titre {
+    text-align: center;
+    font-size: 27px;
+    margin-top: 2%;
+}
+
+.content {
+    text-align: center;
+    padding: 0.5%;
+}
+
+    .food {
+        color:white;
+        padding: 1%;
+        margin-bottom: 1%;
+    }
+
+    .informatique {
+        color:white;
+        padding: 1%;
+        margin-bottom: 1%;
+    }
+
+    .energy {
+        color:white;
+        padding: 1%;
+        margin-bottom: 1%;
+    }
+
+        .theme_txt_food {
+            text-decoration: none;
+            color:white;
+            background-color: orange;
+            padding: 1%;
+        }
+
+        .theme_txt_food:hover {
+            background-color: rgb(190, 133, 26);
+        }
+
+        .theme_txt_informatique {
+            text-decoration: none;
+            color:white;
+            background-color: rgb(17, 120, 237);
+            padding: 1%;
+        }
+
+        .theme_txt_informatique:hover {
+            background-color: rgb(16, 84, 161);
+        }
+
+        .theme_txt_energy {
+            text-decoration: none;
+            color:white;
+            background-color: rgb(47, 212, 18);
+            padding: 1%;
+        }
+
+        .theme_txt_energy:hover {
+            background-color: rgb(40, 137, 23);
+        }
