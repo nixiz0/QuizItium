@@ -21,6 +21,8 @@ body {
 
 .main_content {
     text-align: center;
+    animation-name: slide;
+    animation-duration: 1000ms;
 }
 
 .title {
@@ -254,3 +256,16 @@ body {
         font-size: 28px;
     }
 }
+
+
+
+@keyframes slide {
+    from {
+      transform: translateX(50%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+  }
+  

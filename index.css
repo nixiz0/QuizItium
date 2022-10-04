@@ -5,6 +5,16 @@ body {
     background-color: rgb(217, 217, 217);
 }
 
+.img_div {
+    text-align: center;
+}
+
+.img_quiz {
+    width: auto;
+    height: 130px;
+    margin-top: 5%;
+}
+
 .titre_menu {
     text-align: center;
     font-size: 17px;
@@ -50,6 +60,7 @@ body {
         }
 
         .theme_txt_food:hover {
+            font-size: 19px;
             background-color: rgb(190, 133, 26);
         }
 
@@ -63,6 +74,7 @@ body {
         }
 
         .theme_txt_informatique:hover {
+            font-size: 19px;
             background-color: rgb(16, 84, 161);
         }
 
@@ -76,15 +88,21 @@ body {
         }
 
         .theme_txt_energy:hover {
+            font-size: 19px;
             background-color: rgb(40, 137, 23);
         }
 
 
 @media (min-width:440px) {
+    .img_quiz {
+        width: auto;
+        height: 180px;
+        margin-top: 3%;
+    }
     .titre_menu {
         text-align: center;
         font-size: 19px;
-        margin-top: 7%;
+        margin-top: 2%;
     }
     
     .sous_titre {
@@ -119,14 +137,33 @@ body {
         border-radius: 5%;
         font-size: 18px;
     }
+
+    .theme_txt_food:hover {
+        font-size: 22px;
+        background-color: rgb(190, 133, 26);
+    }
+    .theme_txt_informatique:hover {
+        font-size: 22px;
+        background-color: rgb(16, 84, 161);
+    }
+    .theme_txt_energy:hover {
+        font-size: 22px;
+        background-color: rgb(40, 137, 23);
+    }
 }
 
 
 @media (min-width:900px) {
+    .img_quiz {
+        width: auto;
+        height: 230px;
+        margin-top: 2%;
+    }
+
     .titre_menu {
         text-align: center;
         font-size: 24px;
-        margin-top: 7%;
+        margin-top: 1%;
     }
     
     .sous_titre {
@@ -178,5 +215,18 @@ body {
         padding: 1%;
         border-radius: 5%;
         font-size: 20px;
+    }
+
+    .theme_txt_food:hover {
+        font-size: 24px;
+        background-color: rgb(190, 133, 26);
+    }
+    .theme_txt_informatique:hover {
+        font-size: 24px;
+        background-color: rgb(16, 84, 161);
+    }
+    .theme_txt_energy:hover {
+        font-size: 24px;
+        background-color: rgb(40, 137, 23);
     }
 }
