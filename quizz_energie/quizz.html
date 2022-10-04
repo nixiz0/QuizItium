@@ -8,7 +8,29 @@
     <link rel="stylesheet" href="./quizz.css">
 </head>
 <body>
+    <a class="return_menu" href="../index.html"><img class="img_fleche" src="../Ressources/60793.png"></a>
     
-    <script src="./script.js"></script>
+    <div class="main_content">
+
+        <div id="header_screen" class="header_screen">
+            <h1 class="title"> QuizzItium Thème Energie </h1>
+            <span class="sous_title"> Il y a <span class="nbrQuestion"> ?? </span> Questions </span>
+            <div>
+                <button id="btn_start" class="start"> Commencer </button>
+            </div>
+        </div>
+
+        <div id="questions_screen" class="questions_screen">
+            
+        </div>
+
+        <div id="result_screen" class="result_screen">
+            <h2 class=""> Résultat </h2>
+            <span class=""> Vous avez <span id="nbrCorrects"> ?? </span> réponses correctes sur <span class="nbrQuestion"> ?? </span> </span>
+        </div>
+        
+    </div>
+
+    <script src="./scriptEnergie.js"></script>
 </body>
 </html>
