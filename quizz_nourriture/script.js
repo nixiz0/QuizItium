@@ -109,17 +109,38 @@ function Question(title, answers, answerCorrect) {
 
 
 // On va récupérer notre fonction Quiz pour implémenter ses données dans ses arguments 
+// Partie Création des mes données de Questions :
 let quiz = new Quiz();
 
-let question1 = new Question("Combien de pâtes dans un paquet ? ", [5130, 20, 8523], 1);
+let question1 = new Question("Quel est l'aliment le plus consommé au monde ? ", ["La Salade", "Les Frites", "Le Riz"], 2);
 quiz.addQuestion(question1);
 
-let question2 = new Question("De quel pays provient les pâtes ?", ["Grèce", "Espagne", "Italie"], 3);
+let question2 = new Question("Quel est l'aliment le plus rare sur terre ? ", ["Le Caviar d'Almas", "Le Gingembre", "La Morille"], 1);
 quiz.addQuestion(question2);
 
-let question3 = new Question("De quel pays provient la pizza ?", ["France", "Italie", "Japon"], 2);
+let question3 = new Question("Quel pays consomme le plus de pizza au monde ? ", ["Les Etats-Unis", "La France", "L'Italie"], 2);
 quiz.addQuestion(question3);
 
+let question4 = new Question("D'où vient le kebab ? ", ["De Paris", "D'Amsterdam", "De Berlin"], 3);
+quiz.addQuestion(question4);
+
+let question5 = new Question("Combien existe t'il de légumes ? ", [1000., 400, 20000], 3);
+quiz.addQuestion(question5);
+
+let question6 = new Question("D'où vient le Burrito ? ", ["D'Espagne", "Du Mexique", "De Colombie"], 2);
+quiz.addQuestion(question6);
+
+let question7 = new Question("D'ou vient le boeuf de cobée ? ", ["Du Japon", "De Corée", "Des Etats-Unis"], 1);
+quiz.addQuestion(question7);
+
+let question8 = new Question("D'ou vient le thé ? ", ["D'Angleterre ", "De Chine", "Du Maroc"], 2);
+quiz.addQuestion(question8);
+
+let question9 = new Question("Quel processus subi la farine de mais pour un Nachos ? ", ["La chloroquidation", "l'andrissement", "La nixtamalisation"], 3);
+quiz.addQuestion(question9);
+
+let question10 = new Question("Le Pule (fromage le plus cher du monde) combien vaut-il ? ", ["4000€ le kilo", "1000€ le kilo", "80€ le grammes"], 2);
+quiz.addQuestion(question10);
 
 
 // Ici je suis obligé de passer par un querySelectroAll pour avoir accès à la fonction ForEach (car le getElement ne le possède pas)

@@ -46,6 +46,7 @@ body {
             background-color: orange;
             padding: 2%;
             border-radius: 5%;
+            font-size: 16px;
         }
 
         .theme_txt_food:hover {
@@ -58,6 +59,7 @@ body {
             background-color: rgb(17, 120, 237);
             padding: 2%;
             border-radius: 5%;
+            font-size: 16px;
         }
 
         .theme_txt_informatique:hover {
@@ -70,6 +72,7 @@ body {
             background-color: rgb(47, 212, 18);
             padding: 2%;
             border-radius: 5%;
+            font-size: 16px;
         }
 
         .theme_txt_energy:hover {
@@ -96,6 +99,7 @@ body {
         background-color: orange;
         padding: 1.5%;
         border-radius: 5%;
+        font-size: 18px;
     }
 
     .theme_txt_informatique {
@@ -104,6 +108,7 @@ body {
         background-color: rgb(17, 120, 237);
         padding: 1.5%;
         border-radius: 5%;
+        font-size: 18px;
     }
 
     .theme_txt_energy {
@@ -112,6 +117,7 @@ body {
         background-color: rgb(47, 212, 18);
         padding: 1.5%;
         border-radius: 5%;
+        font-size: 18px;
     }
 }
 
@@ -119,7 +125,7 @@ body {
 @media (min-width:900px) {
     .titre_menu {
         text-align: center;
-        font-size: 22px;
+        font-size: 24px;
         margin-top: 7%;
     }
     
@@ -153,6 +159,7 @@ body {
         background-color: orange;
         padding: 1%;
         border-radius: 5%;
+        font-size: 20px;
     }
 
     .theme_txt_informatique {
@@ -161,6 +168,7 @@ body {
         background-color: rgb(17, 120, 237);
         padding: 1%;
         border-radius: 5%;
+        font-size: 20px;
     }
 
     .theme_txt_energy {
@@ -169,5 +177,6 @@ body {
         background-color: rgb(47, 212, 18);
         padding: 1%;
         border-radius: 5%;
+        font-size: 20px;
     }
 }
