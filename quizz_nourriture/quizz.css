@@ -39,8 +39,69 @@ body {
     font-size: 19px;
     background-color: orange;
     border-radius: 5%;
+    cursor: pointer;
 }
 
     .start:hover {
-        background-color: rgb(234, 156, 13);
+        background-color: rgb(205, 138, 14);
     }
+
+
+.header_screen {
+    display: block;
+}
+
+.questions_screen {
+    display: none;
+}
+
+    .title_questions {
+        font-size: 27px;
+        text-decoration: underline;
+    }
+
+    .list_questions {
+        list-style: none;
+        font-size: 25px;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+        .answers {
+            background-color: orange;
+            color:white;
+            text-shadow: 4px 0.5px 3px rgba(0,0,0,1);
+            padding: 1%;
+            margin-bottom: 5%;
+            cursor: pointer;
+        }
+
+        .answers:hover {
+            background-color: rgb(217, 144, 10);
+        }
+
+        .answersCorrect {
+            background-color: rgb(13, 188, 13);
+        }
+
+        .answersCorrect:hover {
+            background-color: rgb(13, 188, 13);
+        }
+
+        .answersWrong {
+            background-color: rgb(191, 13, 13);
+        }
+
+        .answersWrong:hover {
+            background-color: rgb(191, 13, 13);
+        }
+
+    .avancement_question {
+        font-size: 23px;
+        margin-top: 2%;
+    }
+
+.result_screen {
+    display: none;
+    font-size: 25px;
+}

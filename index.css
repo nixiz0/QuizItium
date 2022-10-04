@@ -45,6 +45,7 @@ body {
             color:white;
             background-color: orange;
             padding: 1%;
+            border-radius: 5%;
         }
 
         .theme_txt_food:hover {
@@ -56,6 +57,7 @@ body {
             color:white;
             background-color: rgb(17, 120, 237);
             padding: 1%;
+            border-radius: 5%;
         }
 
         .theme_txt_informatique:hover {
@@ -67,6 +69,7 @@ body {
             color:white;
             background-color: rgb(47, 212, 18);
             padding: 1%;
+            border-radius: 5%;
         }
 
         .theme_txt_energy:hover {
