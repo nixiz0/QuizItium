@@ -76,7 +76,7 @@ function Question(title, answers, answerCorrect) {
     },
 
     // Ici on va checker la réponse correcte avec une écoute d'évènement :
-    this.checkAnswer = (e) => {
+    this.checkAnswer = (e) => { 
         let answerSelect = e.target;
         if(this.isCorrectAnswer(answerSelect.id)) {
             answerSelect.classList.add("answersCorrect");

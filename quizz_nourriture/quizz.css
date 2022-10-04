@@ -11,12 +11,12 @@ body {
 
 .img_fleche {
     width: auto;
-    height: 50px;
+    height: 33px;
 }
 
     .img_fleche:hover {
         width: auto;
-        height: 58px;
+        height: 37px;
     }
 
 .main_content {
@@ -24,18 +24,18 @@ body {
 }
 
 .title {
-    font-size: 37px;
+    font-size: 33px;
     margin-top: 5%;
 }
 
 .sous_title {
-    font-size: 29px;
+    font-size: 26px;
     text-decoration: underline;
 }
 
 .start {
-    margin-top: 2.5%;
-    padding: 0.7%;
+    margin-top: 3.5%;
+    padding: 2.5%;
     font-size: 19px;
     background-color: orange;
     border-radius: 5%;
@@ -56,15 +56,14 @@ body {
 }
 
     .title_questions {
-        font-size: 27px;
+        font-size: 25px;
         text-decoration: underline;
     }
 
     .list_questions {
         list-style: none;
-        font-size: 25px;
-        margin-left: 25%;
-        margin-right: 25%;
+        font-size: 24px;
+        margin-right: 12%;
     }
 
         .answers {
@@ -97,11 +96,113 @@ body {
         }
 
     .avancement_question {
-        font-size: 23px;
+        font-size: 20px;
         margin-top: 2%;
     }
 
 .result_screen {
     display: none;
-    font-size: 25px;
+    font-size: 22px;
+}
+
+@media (min-width:440px) {
+    .img_fleche {
+        width: auto;
+        height: 37px;
+    }
+    
+        .img_fleche:hover {
+            width: auto;
+            height: 42px;
+        }
+
+    .title_questions {
+        font-size: 26px;
+        text-decoration: underline;
+    }
+
+    .list_questions {
+        list-style: none;
+        font-size: 26px;
+        margin-right: 12%;
+    }
+
+
+    .list_questions {
+        list-style: none;
+        font-size: 24px;
+        margin-right: 17%;
+        margin-left: 12%;
+    }
+    .avancement_question {
+        font-size: 23px;
+        margin-top: 2%;
+    }
+    .result_screen {
+        display: none;
+        font-size: 25px;
+    }
+}
+
+
+@media (min-width:900px) {
+    .img_fleche {
+        width: auto;
+        height: 50px;
+    }
+    
+        .img_fleche:hover {
+            width: auto;
+            height: 58px;
+        }
+
+    .title {
+        font-size: 39px;
+        margin-top: 5%;
+    }
+        
+    .sous_title {
+        font-size: 32px;
+        text-decoration: underline;
+    }
+
+    .start {
+        margin-top: 3%;
+        padding: 0.9%;
+        font-size: 22px;
+        background-color: orange;
+        border-radius: 5%;
+        cursor: pointer;
+    }
+
+    .title_questions {
+        font-size: 31px;
+        text-decoration: underline;
+    }
+
+    .list_questions {
+        list-style: none;
+        font-size: 28px;
+        margin-left: 20%;
+        margin-right: 25%;
+    }
+
+        .answers {
+            background-color: orange;
+            color:white;
+            text-shadow: 4px 0.5px 3px rgba(0,0,0,1);
+            padding: 1%;
+            margin-bottom: 5%;
+            cursor: pointer;
+        }
+
+    .avancement_question {
+        font-size: 26px;
+        margin-top: 2%;
+    }
+    
+    .result_screen {
+        display: none;
+        font-size: 28px;
+    }
 }
