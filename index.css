@@ -60,7 +60,7 @@ body {
         }
 
         .theme_txt_food:hover {
-            font-size: 19px;
+            font-size: 16px;
             background-color: rgb(190, 133, 26);
         }
 
@@ -74,7 +74,7 @@ body {
         }
 
         .theme_txt_informatique:hover {
-            font-size: 19px;
+            font-size: 16px;
             background-color: rgb(16, 84, 161);
         }
 
@@ -88,7 +88,7 @@ body {
         }
 
         .theme_txt_energy:hover {
-            font-size: 19px;
+            font-size: 16px;
             background-color: rgb(40, 137, 23);
         }
 
@@ -139,15 +139,15 @@ body {
     }
 
     .theme_txt_food:hover {
-        font-size: 22px;
+        font-size: 18px;
         background-color: rgb(190, 133, 26);
     }
     .theme_txt_informatique:hover {
-        font-size: 22px;
+        font-size: 18px;
         background-color: rgb(16, 84, 161);
     }
     .theme_txt_energy:hover {
-        font-size: 22px;
+        font-size: 18px;
         background-color: rgb(40, 137, 23);
     }
 }

@@ -79,7 +79,7 @@ body {
         }
 
         .answers:hover {
-            background-color: rgb(26, 177, 114);
+            background-color: rgb(29, 200, 129);
         }
 
         .answersCorrect {
@@ -155,7 +155,7 @@ body {
     }
 
     .answers:hover {
-        background-color: rgb(26, 177, 114);
+        background-color: rgb(29, 200, 129);
     }
 
     .answersCorrect {
