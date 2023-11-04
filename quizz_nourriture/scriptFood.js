@@ -33,10 +33,10 @@ function Quiz(){
 
 
 // Fonction Question permettant de créer les questions avec le titre, les réponses et la réponse correcte
-function Question(title, answers, answerCorrect) {
+function Question(title, answers, correctAnswers) {
     this.title = title,
     this.answers = answers,
-    this.answerCorrect = answerCorrect,
+    this.correctAnswers = correctAnswers,
 
     // Mise en place et structuration du HTML et CSS pour mes questions
     this.getElement = function(indexQuestion, nbrOfQuestions) {
@@ -78,32 +78,35 @@ function Question(title, answers, answerCorrect) {
     // Ici on va checker la réponse correcte avec une écoute d'évènement :
     this.checkAnswer = (e) => { 
         let answerSelect = e.target;
-        if(this.isCorrectAnswer(answerSelect.id)) {
+        if (this.isCorrectAnswer(answerSelect.id)) {
             answerSelect.classList.add("answersCorrect");
             quiz.nbrCorrects++;
-        }
-        else {
+        } else {
             answerSelect.classList.add("answersWrong");
-            let RightAnswer = document.getElementById(this.answerCorrect);
-            RightAnswer.classList.add("answersCorrect");
+            let RightAnswers = this.correctAnswers.map(index => document.getElementById(index));
+            RightAnswers.forEach(RightAnswer => {
+                RightAnswer.classList.add("answersCorrect");
+            });
         }
 
-        // Mise en place d'une fonction Timeout pour passer à la prochaine question, timer d'une seconde après le click sur un élément
-        setTimeout(function() {
-            questions_screen.textContent = '';
-            quiz.indexCurrentQuestion++;
-            quiz.displayCurrentQuestion();
-        }, 1100);
+        // Vérifiez si toutes les bonnes réponses ont été sélectionnées
+        const allCorrectAnswersSelected = this.correctAnswers.every(index => {
+            return document.getElementById(index).classList.contains("answersCorrect");
+        });
+
+        // Si toutes les bonnes réponses ont été sélectionnées, passez à la question suivante
+        if (allCorrectAnswersSelected) {
+            setTimeout(function() {
+                questions_screen.textContent = '';
+                quiz.indexCurrentQuestion++;
+                quiz.displayCurrentQuestion();
+            }, 1100);
+        }
     }
 
     // Si la réponse choisit par le user est égale à la réponse correcte retourner True sinon False
     this.isCorrectAnswer = function(answerUser) {
-        if(answerUser == this.answerCorrect) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.correctAnswers.includes(parseInt(answerUser)); // Vérifie si la réponse est dans les réponses correctes
     }
 };
 
@@ -112,34 +115,34 @@ function Question(title, answers, answerCorrect) {
 // Partie Création des mes données de Questions :
 let quiz = new Quiz();
 
-let question1 = new Question("Quel est l'aliment le plus consommé au monde ? ", ["La Salade", "Les Frites", "Le Riz"], 2);
+let question1 = new Question("Quel est l'aliment le plus consommé au monde ? ", ["La Salade", "Les Frites", "Le Riz"], [2]);
 quiz.addQuestion(question1);
 
-let question2 = new Question("Quel est l'aliment le plus rare sur terre ? ", ["Le Caviar d'Almas", "Le Gingembre", "La Morille"], 1);
+let question2 = new Question("Quel est l'aliment le plus rare sur terre ? ", ["Le Caviar d'Almas", "Le Gingembre", "La Morille"], [1]);
 quiz.addQuestion(question2);
 
-let question3 = new Question("Quel pays consomme le plus de pizza au monde ? ", ["Les Etats-Unis", "La France", "L'Italie"], 2);
+let question3 = new Question("Quel pays consomme le plus de pizza au monde ? ", ["Les Etats-Unis", "La France", "L'Italie"], [2]);
 quiz.addQuestion(question3);
 
-let question4 = new Question("D'où vient le kebab ? ", ["De Paris", "D'Amsterdam", "De Berlin"], 3);
+let question4 = new Question("D'où vient le kebab ? ", ["De Paris", "D'Amsterdam", "De Berlin"], [3]);
 quiz.addQuestion(question4);
 
-let question5 = new Question("Combien existe t'il de légumes ? ", [1000., 400, 20000], 3);
+let question5 = new Question("Combien existe t'il de légumes ? ", [1000., 400, 20000], [3]);
 quiz.addQuestion(question5);
 
-let question6 = new Question("D'où vient le Burrito ? ", ["D'Espagne", "Du Mexique", "De Colombie"], 2);
+let question6 = new Question("D'où vient le Burrito ? ", ["D'Espagne", "Du Mexique", "De Colombie"], [2]);
 quiz.addQuestion(question6);
 
-let question7 = new Question("D'ou vient le boeuf de cobée ? ", ["Du Japon", "De Corée", "Des Etats-Unis"], 1);
+let question7 = new Question("D'ou vient le boeuf de cobée ? ", ["Du Japon", "De Corée", "Des Etats-Unis"], [1]);
 quiz.addQuestion(question7);
 
-let question8 = new Question("D'ou vient le thé ? ", ["D'Angleterre ", "De Chine", "Du Maroc"], 2);
+let question8 = new Question("D'ou vient le thé ? ", ["D'Angleterre ", "De Chine", "Du Maroc"], [2]);
 quiz.addQuestion(question8);
 
-let question9 = new Question("Quel processus subi la farine de mais pour un Nachos ? ", ["La chloroquidation", "l'andrissement", "La nixtamalisation"], 3);
+let question9 = new Question("Quel processus subi la farine de mais pour un Nachos ? ", ["La chloroquidation", "l'andrissement", "La nixtamalisation"], [3]);
 quiz.addQuestion(question9);
 
-let question10 = new Question("Le Pule (fromage le plus cher du monde) combien vaut-il ? ", ["4000€ le kilo", "1000€ le kilo", "80€ le grammes"], 2);
+let question10 = new Question("Le Pule (fromage le plus cher du monde) combien vaut-il ? ", ["4000€ le kilo", "1000€ le kilo", "80€ le grammes"], [2]);
 quiz.addQuestion(question10);
 
 
