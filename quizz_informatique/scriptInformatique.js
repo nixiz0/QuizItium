@@ -33,10 +33,10 @@ function Quiz(){
 
 
 // Fonction Question permettant de créer les questions avec le titre, les réponses et la réponse correcte
-function Question(title, answers, answerCorrect) {
+function Question(title, answers, correctAnswers) {
     this.title = title,
     this.answers = answers,
-    this.answerCorrect = answerCorrect,
+    this.correctAnswers = correctAnswers,
 
     // Mise en place et structuration du HTML et CSS pour mes questions
     this.getElement = function(indexQuestion, nbrOfQuestions) {
@@ -78,32 +78,35 @@ function Question(title, answers, answerCorrect) {
     // Ici on va checker la réponse correcte avec une écoute d'évènement :
     this.checkAnswer = (e) => { 
         let answerSelect = e.target;
-        if(this.isCorrectAnswer(answerSelect.id)) {
+        if (this.isCorrectAnswer(answerSelect.id)) {
             answerSelect.classList.add("answersCorrect");
             quiz.nbrCorrects++;
-        }
-        else {
+        } else {
             answerSelect.classList.add("answersWrong");
-            let RightAnswer = document.getElementById(this.answerCorrect);
-            RightAnswer.classList.add("answersCorrect");
+            let RightAnswers = this.correctAnswers.map(index => document.getElementById(index));
+            RightAnswers.forEach(RightAnswer => {
+                RightAnswer.classList.add("answersCorrect");
+            });
         }
 
-        // Mise en place d'une fonction Timeout pour passer à la prochaine question, timer d'une seconde après le click sur un élément
-        setTimeout(function() {
-            questions_screen.textContent = '';
-            quiz.indexCurrentQuestion++;
-            quiz.displayCurrentQuestion();
-        }, 1100);
+        // Vérifiez si toutes les bonnes réponses ont été sélectionnées
+        const allCorrectAnswersSelected = this.correctAnswers.every(index => {
+            return document.getElementById(index).classList.contains("answersCorrect");
+        });
+
+        // Si toutes les bonnes réponses ont été sélectionnées, passez à la question suivante
+        if (allCorrectAnswersSelected) {
+            setTimeout(function() {
+                questions_screen.textContent = '';
+                quiz.indexCurrentQuestion++;
+                quiz.displayCurrentQuestion();
+            }, 1100);
+        }
     }
 
     // Si la réponse choisit par le user est égale à la réponse correcte retourner True sinon False
     this.isCorrectAnswer = function(answerUser) {
-        if(answerUser == this.answerCorrect) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.correctAnswers.includes(parseInt(answerUser)); // Vérifie si la réponse est dans les réponses correctes
     }
 };
 
@@ -112,34 +115,34 @@ function Question(title, answers, answerCorrect) {
 // Partie Création des mes données de Questions :
 let quiz = new Quiz();
 
-let question1 = new Question("Quel carte graphique n'existe pas ? ", ["La 3090", "La 2040", "La 4080", "La 1080"], 2);
+let question1 = new Question("Quelles cartes graphiques n'existent pas ? ", ["La 3020", "La 2040", "La 4180", "La 1080"], [1, 3]);
 quiz.addQuestion(question1);
 
-let question2 = new Question("Quand a été crée IBM ? ", [1911, 1953, 1985], 1);
+let question2 = new Question("Quand a été crée IBM ? ", [1911, 1953, 1985], [1]);
 quiz.addQuestion(question2);
 
-let question3 = new Question("Quand a été crée Apple ? ", [1962, 1976, 1987], 2);
+let question3 = new Question("Quand a été crée Apple ? ", [1962, 1976, 1987], [2]);
 quiz.addQuestion(question3);
 
-let question4 = new Question("Combien vaut le samsung s21 128Go Neuf en moyenne ? ", ["1 059€", "847€", "1 574€"], 1);
+let question4 = new Question("Combien vaut le samsung s21 128Go Neuf en moyenne ? ", ["1 059€", "847€", "1 574€"], [1]);
 quiz.addQuestion(question4);
 
-let question5 = new Question("En 1971, qui a fabriqué le premier processeur ? ", ["Alan Turing", "Ted Hoff", "John Von Neumann"], 2);
+let question5 = new Question("En 1971, qui a fabriqué le premier processeur ? ", ["Alan Turing", "Ted Hoff", "John Von Neumann"], [2]);
 quiz.addQuestion(question5);
 
-let question6 = new Question("Comment stockait-on nos données en 1928 ? ", ["Par Cd-Rom", "Par carte perforée", "Par bande magnétique"], 3);
+let question6 = new Question("Comment stockait-on nos données en 1928 ? ", ["Par Cd-Rom", "Par carte perforée", "Par bande magnétique"], [3]);
 quiz.addQuestion(question6);
 
-let question7 = new Question("De quel pays vient Sony ? ", ["Du Japon", "De Corée", "Des Etats-Unis"], 1);
+let question7 = new Question("De quel pays vient Sony ? ", ["Du Japon", "De Corée", "Des Etats-Unis"], [1]);
 quiz.addQuestion(question7);
 
-let question8 = new Question("Quand a été inventé le premier modèle d'intelligence artificielle ? ", ["En 1943", "En 1976", "En 2010"], 1);
+let question8 = new Question("Quand a été inventé le premier modèle d'intelligence artificielle ? ", ["En 1943", "En 1976", "En 2010"], [1]);
 quiz.addQuestion(question8);
 
-let question9 = new Question("Quand a été crée le premier robot ? ", ["Au XXième siècle", "Au XXIème siècle", "IV siècle av J-C"], 3);
+let question9 = new Question("Quand a été crée le premier robot ? ", ["Au XXième siècle", "Au XXIème siècle", "IV siècle av J-C"], [3]);
 quiz.addQuestion(question9);
 
-let question10 = new Question("Quand a été lancé la première fusée en orbite ? ", ["En 1926", "En 1957", "En 1969"], 2);
+let question10 = new Question("Quand a été lancé la première fusée en orbite ? ", ["En 1926", "En 1957", "En 1969"], [2]);
 quiz.addQuestion(question10);
 
 
